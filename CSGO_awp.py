@@ -8,9 +8,10 @@ import PySimpleGUI as ps
 #pysimplegui setup
 GUITitle = "CSGO Clicker"
 ps.theme("DarkGreen3")
+textBackground = "gray10"
 layout = [
-    [ps.Text(text="Set a hotkey by pressing the button.",key="-Text-", size=(50,4))],
-    [ps.Button("Set Hotkey")]
+    [ps.Text(text="Set a hotkey by pressing the button.",key="-Text-", size=(50,1),font=("default", 15, "bold"), background_color=textBackground)],
+    [ps.Button("Set Hotkey", size=(10,1), font=("default", 12, "bold"))]
 ]
 window = ps.Window(GUITitle, layout, finalize=True)
 
