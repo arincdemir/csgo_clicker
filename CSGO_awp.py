@@ -29,10 +29,11 @@ elif(event == "Set Hotkey"):
     window["-Text-"].update("Press key")
     window.Finalize()
     key = keyboard.read_key()
+    keyDown = True
 print(key)
 
 #the program
-window["-Text-"].update("Press hotkey after placing your crosshair")
+window["-Text-"].update(f"key = {key}  Press hotkey after placing your crosshair")
 while running:
     event, values = window.read(timeout=0.1)
     if(event == ps.WINDOW_CLOSED):
@@ -41,6 +42,8 @@ while running:
         window["-Text-"].update("Press key")
         window.Finalize()
         key = keyboard.read_key()
+        keyDown = True
+        window["-Text-"].update(f"key = {key}  Press hotkey after placing your crosshair")
     
     print("not listening")
 
@@ -61,7 +64,7 @@ while running:
                 keyDown = False
         else:
             pyautogui.click()
-        window["-Text-"].update("Press hotkey after placing your crosshair")
+        window["-Text-"].update(f"key = {key}  Press hotkey after placing your crosshair")
 
     elif(not keyboard.is_pressed(key)):
         keyDown = False
